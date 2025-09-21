@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sesi_check/ui/core/themes/app_colors.dart';
+
+import '../../../routing/routes.dart';
 
 class AppBarPersonalizado extends StatelessWidget {
 
   final String titulo;
-  final Function() voltar;
-  final Function() sair;
 
-  const AppBarPersonalizado({super.key, required this.titulo, required this.voltar, required this.sair});
+  const AppBarPersonalizado({super.key, required this.titulo});
 
   @override
   Widget build(BuildContext context) {
@@ -26,48 +27,21 @@ class AppBarPersonalizado extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: SafeArea(
-                  child: Stack(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      InkWell(
-                        onTap: () => voltar,
-                        child: Positioned.fill(
-                          top: 15,
-                          child: Align(
-                            alignment: Alignment.topLeft,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Icon(Icons.arrow_back, color: Colors.white),
-                                Text(
-                                  "Voltar",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned.fill(
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Text(
-                            "Início",
-                            style: Theme.of(context).textTheme.headlineLarge,
-                          ),
-                        ),
+                      SizedBox(width: 30),
+                      Text(
+                        titulo,
+                        style: Theme.of(context).textTheme.headlineLarge,
                       ),
                       InkWell(
-                        onTap: () => sair,
-                        child: Positioned.fill(
-                          top: 15,
-                          child: Align(
-                            alignment: Alignment.topRight,
-                            child: Text(
-                              "Sair",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
+                        onTap: () {
+                          context.go(Routes.login);
+                        },
+                        child: Text(
+                          "Sair",
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ],
