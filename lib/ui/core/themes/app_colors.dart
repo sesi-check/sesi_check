@@ -5,4 +5,5 @@ abstract final class AppColors {
   static const secundaria = Color(0xFF6FAB0D);
   static const bottomSelected = Color(0xFF168821);
   static const bottomUnselected = Color(0xFF96C59B);
+  static const terciaria = Color(0xFF08272C);
 }
