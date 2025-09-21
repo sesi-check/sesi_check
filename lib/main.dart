@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sesi_check/routing/router.dart';
+import 'package:sesi_check/ui/core/themes/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'SESI Check',
       debugShowCheckedModeBanner: false,
       routerConfig: router,
+      theme: AppTheme.temaClaro,
     );
   }
 }
