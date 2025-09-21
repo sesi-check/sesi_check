@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: size.width,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.green[600],
+                      color: AppColors.secundaria,
                     ),
                     child: Center(child: Text("Entrar", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal),)),
                   ),
